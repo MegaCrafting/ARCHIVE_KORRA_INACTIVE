@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="C:/Users/Chandler/Documents/Work/MegaCraft/Avatar/EffectLib-3.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chandler/Documents/Work/MegaCraft/Avatar/Essentials-2.x-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chandler/Documents/Work/MegaCraft/Avatar/EssentialsGroupManager(1).jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chandler/Documents/Work/MegaCraft/Avatar/KorraRPG.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chandler/Documents/Work/MegaCraft/Avatar/MassiveCore.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chandler/Documents/Work/MegaCraft/Avatar/NoCheatPlus.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chandler/Documents/Work/MegaCraft/Avatar/PreciousStones.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chandler/Documents/Work/MegaCraft/Avatar/ProtocolLib.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chandler/Documents/Work/MegaCraft/Avatar/spigot-1.8.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chandler/Documents/Work/MegaCraft/Avatar/Towny.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chandler/Documents/Work/MegaCraft/Avatar/Vault.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chandler/Documents/Work/MegaCraft/Avatar/worldguard-6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chandler/Documents/Work/MegaCraft/Avatar/Factions.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chandler/Documents/Work/MegaCraft/Avatar/GriefPrevention.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Chandler/Documents/Work/MegaCraft/Avatar/LWC.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
