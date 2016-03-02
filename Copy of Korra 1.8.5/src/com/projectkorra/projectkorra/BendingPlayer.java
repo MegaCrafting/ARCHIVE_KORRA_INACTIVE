@@ -75,6 +75,8 @@ public class BendingPlayer {
 		toggledElements.put(Element.Fire, true);
 		toggledElements.put(Element.Water, true);
 		toggledElements.put(Element.Chi, true);
+		toggledElements.put(Element.Scarecrow, true);
+		toggledElements.put(Element.Snowman, true);
 		
 		players.put(uuid, this);
 		PKListener.login(this);

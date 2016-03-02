@@ -209,7 +209,7 @@ public class AirMethods {
 	 */
 	public static void playAirbendingSound(Location loc) {
 		if (plugin.getConfig().getBoolean("Properties.Air.PlaySound")) {
-			loc.getWorld().playSound(loc, Sound.CREEPER_HISS, 1, 5);
+			loc.getWorld().playSound(loc, Sound.ENTITY_CREEPER_PRIMED, 1, 5);
 		}
 	}
 

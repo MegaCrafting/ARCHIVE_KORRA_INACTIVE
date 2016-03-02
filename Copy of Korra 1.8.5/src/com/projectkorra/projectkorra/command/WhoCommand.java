@@ -9,7 +9,6 @@ import com.projectkorra.projectkorra.chiblocking.ChiMethods;
 import com.projectkorra.projectkorra.earthbending.EarthMethods;
 import com.projectkorra.projectkorra.firebending.FireMethods;
 import com.projectkorra.projectkorra.waterbending.WaterMethods;
-import com.projectkorra.rpg.RPGMethods;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -230,14 +229,6 @@ public class WhoCommand extends PKCommand {
 					} else {
 						sender.sendMessage(i + " - " + GeneralMethods.getAbilityColor(ability) + ability);
 					}
-				}
-			}
-
-			if (GeneralMethods.hasRPG()) {
-				if (RPGMethods.isCurrentAvatar(player.getUniqueId())) {
-					sender.sendMessage(GeneralMethods.getAvatarColor() + "Current Avatar");
-				} else if (RPGMethods.hasBeenAvatar(player.getUniqueId())) {
-					sender.sendMessage(GeneralMethods.getAvatarColor() + "Former Avatar");
 				}
 			}
 

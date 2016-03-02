@@ -367,7 +367,7 @@ public class IceBlast {
 			ParticleEffect.ITEM_CRACK.display(new ParticleEffect.ItemData(Material.ICE, (byte) 0), new Vector(((Math.random() - 0.5) * .5), ((Math.random() - 0.5) * .5), ((Math.random() - 0.5) * .5)), 2f, location, 257.0D);
 			ParticleEffect.SNOW_SHOVEL.display(location, (float) Math.random(), (float) Math.random(), (float) Math.random(), 0, 2);
 		}
-		location.getWorld().playSound(location, Sound.GLASS, 5, 1.3f);
+		location.getWorld().playSound(location, Sound.BLOCK_GLASS_HIT, 5, 1.3f);
 	}
 
 }

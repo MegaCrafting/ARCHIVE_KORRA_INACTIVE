@@ -10,8 +10,6 @@ import com.projectkorra.projectkorra.util.Flight;
 import com.projectkorra.projectkorra.util.RevertChecker;
 import com.projectkorra.projectkorra.util.TempPotionEffect;
 import com.projectkorra.projectkorra.waterbending.WaterMethods;
-import com.projectkorra.rpg.RPGMethods;
-import com.projectkorra.rpg.WorldEvents;
 
 import org.bukkit.Bukkit;
 import org.bukkit.World;
@@ -79,9 +77,7 @@ public class BendingManager implements Runnable, ConfigLoadable {
 					// The hashmap says it is day, but it is not.
 					times.put(world, false); // Sets time to night.
 					if (GeneralMethods.hasRPG()) {
-						if (RPGMethods.isLunarEclipse(world)) {
-							events.put(world, WorldEvents.LunarEclipse.toString());
-						} else if (WaterMethods.isFullMoon(world)) {
+						if (WaterMethods.isFullMoon(world)) {
 							events.put(world, "FullMoon");
 						} else {
 							events.put(world, "");
@@ -100,9 +96,7 @@ public class BendingManager implements Runnable, ConfigLoadable {
 
 						if (GeneralMethods.isBender(player.getName(), Element.Water)) {
 							if (GeneralMethods.hasRPG()) {
-								if (RPGMethods.isLunarEclipse(world)) {
-									player.sendMessage(WaterMethods.getWaterColor() + lunarEclipseMessage);
-								} else if (WaterMethods.isFullMoon(world)) {
+								if (WaterMethods.isFullMoon(world)) {
 									player.sendMessage(WaterMethods.getWaterColor() + fullMoonriseMessage);
 								} else {
 									player.sendMessage(WaterMethods.getWaterColor() + moonriseMessage);
@@ -126,30 +120,14 @@ public class BendingManager implements Runnable, ConfigLoadable {
 				if (!times.get(world) && FireMethods.isDay(world)) {
 					// The hashmap says it is night, but it is day.
 					times.put(world, true);
-					if (GeneralMethods.hasRPG()) {
-						if (RPGMethods.isSozinsComet(world)) {
-							events.put(world, WorldEvents.SozinsComet.toString());
-						} else if (RPGMethods.isSolarEclipse(world) && !RPGMethods.isLunarEclipse(world)) {
-							events.put(world, WorldEvents.SolarEclipse.toString());
-						} else {
-							events.put(world, "");
-						}
-					} else {
-						events.put(world, "");
-					}
+					events.put(world, "");
 					for (Player player : world.getPlayers()) {
 						if (GeneralMethods.isBender(player.getName(), Element.Water) && player.hasPermission("bending.message.nightmessage")) {
 							player.sendMessage(WaterMethods.getWaterColor() + moonsetMessage);
 						}
 						if (GeneralMethods.isBender(player.getName(), Element.Fire) && player.hasPermission("bending.message.daymessage")) {
 							if (GeneralMethods.hasRPG()) {
-								if (RPGMethods.isSozinsComet(world)) {
-									player.sendMessage(FireMethods.getFireColor() + sozinsCometMessage);
-								} else if (RPGMethods.isSolarEclipse(world) && !RPGMethods.isLunarEclipse(world)) {
-									player.sendMessage(FireMethods.getFireColor() + solarEclipseMessage);
-								} else {
 									player.sendMessage(FireMethods.getFireColor() + sunriseMessage);
-								}
 							} else {
 								player.sendMessage(FireMethods.getFireColor() + sunriseMessage);
 							}

@@ -312,10 +312,10 @@ public class AirBlast implements ConfigLoadable {
 
 				if (block.getData() < 4) {
 					block.setData((byte) (block.getData() + 4));
-					block.getWorld().playSound(block.getLocation(), Sound.DOOR_CLOSE, 10, 1);
+					block.getWorld().playSound(block.getLocation(), Sound.BLOCK_WOODEN_DOOR_CLOSE, 10, 1);
 				} else {
 					block.setData((byte) (block.getData() - 4));
-					block.getWorld().playSound(block.getLocation(), Sound.DOOR_OPEN, 10, 1);
+					block.getWorld().playSound(block.getLocation(), Sound.BLOCK_WOODEN_DOOR_OPEN, 10, 1);
 				}
 			}
 			if ((block.getType() == Material.LEVER) && !affectedlevers.contains(block) && flickLevers) {

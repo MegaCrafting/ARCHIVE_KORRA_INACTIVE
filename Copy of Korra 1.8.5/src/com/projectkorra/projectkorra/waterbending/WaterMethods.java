@@ -8,8 +8,6 @@ import com.projectkorra.projectkorra.ability.AvatarState;
 import com.projectkorra.projectkorra.chiblocking.ChiMethods;
 import com.projectkorra.projectkorra.util.BlockSource;
 import com.projectkorra.projectkorra.util.TempBlock;
-import com.projectkorra.rpg.RPGMethods;
-import com.projectkorra.rpg.WorldEvents;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
@@ -97,9 +95,7 @@ public class WaterMethods {
 	public static double getWaterbendingNightAugment(World world) {
 		if (GeneralMethods.hasRPG()) {
 			if (isNight(world)) {
-				if (BendingManager.events.get(world).equalsIgnoreCase(WorldEvents.LunarEclipse.toString())) {
-					return RPGMethods.getFactor(WorldEvents.LunarEclipse);
-				} else if (BendingManager.events.get(world).equalsIgnoreCase("FullMoon")) {
+				if (BendingManager.events.get(world).equalsIgnoreCase("FullMoon")) {
 					return config.getDouble("Properties.Water.FullMoonFactor");
 				}
 				return config.getDouble("Properties.Water.NightFactor");
@@ -340,9 +336,7 @@ public class WaterMethods {
 	public static double waterbendingNightAugment(double value, World world) {
 		if (isNight(world)) {
 			if (GeneralMethods.hasRPG()) {
-				if (BendingManager.events.get(world).equalsIgnoreCase(WorldEvents.LunarEclipse.toString())) {
-					return RPGMethods.getFactor(WorldEvents.LunarEclipse) * value;
-				} else if (BendingManager.events.get(world).equalsIgnoreCase("FullMoon")) {
+				if (BendingManager.events.get(world).equalsIgnoreCase("FullMoon")) {
 					return plugin.getConfig().getDouble("Properties.Water.FullMoonFactor") * value;
 				} else {
 					return value;
@@ -419,19 +413,19 @@ public class WaterMethods {
 
 	public static void playWaterbendingSound(Location loc) {
 		if (plugin.getConfig().getBoolean("Properties.Water.PlaySound")) {
-			loc.getWorld().playSound(loc, Sound.WATER, 1, 10);
+			loc.getWorld().playSound(loc, Sound.BLOCK_WATER_AMBIENT, 1, 10);
 		}
 	}
 
 	public static void playIcebendingSound(Location loc) {
 		if (plugin.getConfig().getBoolean("Properties.Water.PlaySound")) {
-			loc.getWorld().playSound(loc, Sound.FIRE_IGNITE, 2, 10);
+			loc.getWorld().playSound(loc, Sound.ITEM_FLINTANDSTEEL_USE, 2, 10);
 		}
 	}
 
 	public static void playPlantbendingSound(Location loc) {
 		if (plugin.getConfig().getBoolean("Properties.Water.PlaySound")) {
-			loc.getWorld().playSound(loc, Sound.STEP_GRASS, 1, 10);
+			loc.getWorld().playSound(loc, Sound.BLOCK_GRASS_STEP, 1, 10);
 		}
 	}
 

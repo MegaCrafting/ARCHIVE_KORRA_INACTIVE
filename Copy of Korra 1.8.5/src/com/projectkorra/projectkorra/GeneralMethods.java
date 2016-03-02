@@ -1688,7 +1688,7 @@ public class GeneralMethods {
 	}
 
 	public static void playAvatarSound(Location loc) {
-		loc.getWorld().playSound(loc, Sound.ANVIL_LAND, 1, 10);
+		loc.getWorld().playSound(loc, Sound.BLOCK_ANVIL_LAND, 1, 10);
 	}
 
 	public static void reloadPlugin() {

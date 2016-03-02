@@ -513,7 +513,7 @@ public class EarthMethods {
 
 	public static void playSandBendingSound(Location loc) {
 		if (plugin.getConfig().getBoolean("Properties.Earth.PlaySound")) {
-			loc.getWorld().playSound(loc, Sound.DIG_SAND, 1.5f, 5);
+			loc.getWorld().playSound(loc, Sound.BLOCK_SAND_HIT, 1.5f, 5);
 		}
 	}
 
@@ -625,7 +625,7 @@ public class EarthMethods {
 
 	public static void playMetalbendingSound(Location loc) {
 		if (plugin.getConfig().getBoolean("Properties.Earth.PlaySound")) {
-			loc.getWorld().playSound(loc, Sound.IRONGOLEM_HIT, 1, 10);
+			loc.getWorld().playSound(loc, Sound.ENTITY_IRONGOLEM_HURT, 1, 10);
 		}
 	}
 

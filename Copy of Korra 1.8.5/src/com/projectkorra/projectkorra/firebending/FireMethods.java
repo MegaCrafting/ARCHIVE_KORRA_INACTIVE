@@ -6,8 +6,6 @@ import com.projectkorra.projectkorra.ProjectKorra;
 import com.projectkorra.projectkorra.ability.AbilityModuleManager;
 import com.projectkorra.projectkorra.util.Information;
 import com.projectkorra.projectkorra.util.ParticleEffect;
-import com.projectkorra.rpg.RPGMethods;
-import com.projectkorra.rpg.WorldEvents;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -106,17 +104,7 @@ public class FireMethods {
 	 */
 	public static double getFirebendingDayAugment(double value, World world) {
 		if (isDay(world)) {
-			if (GeneralMethods.hasRPG()) {
-				if (BendingManager.events.get(world).equalsIgnoreCase(WorldEvents.SozinsComet.toString())) {
-					return RPGMethods.getFactor(WorldEvents.SozinsComet) * value;
-				} else if (BendingManager.events.get(world).equalsIgnoreCase(WorldEvents.SolarEclipse.toString())) {
-					return RPGMethods.getFactor(WorldEvents.SolarEclipse) * value;
-				} else {
-					return value * config.getDouble("Properties.Fire.DayFactor");
-				}
-			} else {
-				return value * config.getDouble("Properties.Fire.DayFactor");
-			}
+			return value * config.getDouble("Properties.Fire.DayFactor");
 		}
 		return value;
 	}
@@ -178,13 +166,13 @@ public class FireMethods {
 
 	public static void playFirebendingSound(Location loc) {
 		if (plugin.getConfig().getBoolean("Properties.Fire.PlaySound")) {
-			loc.getWorld().playSound(loc, Sound.FIRE, 1, 10);
+			loc.getWorld().playSound(loc, Sound.BLOCK_FIRE_AMBIENT, 1, 10);
 		}
 	}
 
 	public static void playCombustionSound(Location loc) {
 		if (plugin.getConfig().getBoolean("Properties.Fire.PlaySound")) {
-			loc.getWorld().playSound(loc, Sound.FIREWORK_BLAST, 1, -1);
+			loc.getWorld().playSound(loc, Sound.ENTITY_FIREWORK_BLAST, 1, -1);
 		}
 	}
 

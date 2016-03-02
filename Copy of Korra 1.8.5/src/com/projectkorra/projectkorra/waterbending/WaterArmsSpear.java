@@ -8,7 +8,6 @@ import com.projectkorra.projectkorra.ProjectKorra;
 import com.projectkorra.projectkorra.earthbending.EarthMethods;
 import com.projectkorra.projectkorra.util.TempBlock;
 import com.projectkorra.projectkorra.waterbending.WaterArms.Arm;
-import com.projectkorra.rpg.WorldEvents;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -78,11 +77,7 @@ public class WaterArmsSpear {
 		World world = player.getWorld();
 		if (WaterMethods.isNight(world)) {
 			if (GeneralMethods.hasRPG()) {
-				if (BendingManager.events.get(world).equalsIgnoreCase(WorldEvents.LunarEclipse.toString())) {
-					spearRange = spearRangeFullMoon;
-					spearSphere = spearSphereFullMoon;
-					spearDuration = spearDurationFullMoon;
-				} else if (BendingManager.events.get(world).equalsIgnoreCase("FullMoon")) {
+				if (BendingManager.events.get(world).equalsIgnoreCase("FullMoon")) {
 					spearRange = spearRangeFullMoon;
 					spearSphere = spearSphereFullMoon;
 					spearDuration = spearDurationFullMoon;

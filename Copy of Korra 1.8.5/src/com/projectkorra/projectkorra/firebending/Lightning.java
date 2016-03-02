@@ -164,8 +164,8 @@ public class Lightning implements ConfigLoadable {
 	 * @param lent The LivingEntity that is being damaged
 	 */
 	public void electrocute(LivingEntity lent) {
-		lent.getWorld().playSound(lent.getLocation(), Sound.CREEPER_HISS, 1, 0);
-		player.getWorld().playSound(player.getLocation(), Sound.CREEPER_HISS, 1, 0);
+		lent.getWorld().playSound(lent.getLocation(), Sound.ENTITY_CREEPER_PRIMED, 1, 0);
+		player.getWorld().playSound(player.getLocation(), Sound.ENTITY_CREEPER_PRIMED, 1, 0);
 		GeneralMethods.damageEntity(player, lent, damage, "Lightning");
 		if (Math.random() < stunChance) {
 			final Location lentLoc = lent.getLocation();
@@ -725,8 +725,8 @@ public class Lightning implements ConfigLoadable {
 						affectedEntities.add(entity);
 						LivingEntity lent = (LivingEntity) entity;
 						if (lent instanceof Player) {
-							lent.getWorld().playSound(lent.getLocation(), Sound.CREEPER_HISS, 1, 0);
-							player.getWorld().playSound(player.getLocation(), Sound.CREEPER_HISS, 1, 0);
+							lent.getWorld().playSound(lent.getLocation(), Sound.ENTITY_CREEPER_PRIMED, 1, 0);
+							player.getWorld().playSound(player.getLocation(), Sound.ENTITY_CREEPER_PRIMED, 1, 0);
 							Player p = (Player) lent;
 							Lightning light = getLightning(p);
 							if (light != null && light.state == State.START) {

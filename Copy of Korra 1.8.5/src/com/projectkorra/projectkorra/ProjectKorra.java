@@ -51,7 +51,6 @@ public class ProjectKorra extends JavaPlugin {
 		}
 		new ConfigManager();
 		new GeneralMethods(this);
-		updater = new Updater(this, "http://projectkorra.com/forum/forums/dev-builds.16/index.rss");
 		new Commands(this);
 		abManager = new AbilityModuleManager(this);
 		new MultiAbilityModuleManager();
@@ -93,7 +92,6 @@ public class ProjectKorra extends JavaPlugin {
 
 		GeneralMethods.deserializeFile();
 		GeneralMethods.startCacheCleaner(GeneralMethods.CACHE_TIME);
-		updater.checkUpdate();
 	}
 
 	@Override
